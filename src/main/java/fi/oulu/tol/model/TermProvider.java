@@ -31,7 +31,7 @@ public class TermProvider {
 	private Language sortOrder = Settings.getLanguage();
 	private String searchFilter = "";
 
-	private static final int FETCH_TIME_GAP_HOURS = 6; // hrs between network fetches.
+	private static final int FETCH_TIME_GAP_MINUTES = 10; // minutes between network fetches.
 
 	private static final Logger logger = LogManager.getLogger(TermProvider.class);
 	
@@ -62,7 +62,7 @@ public class TermProvider {
 		// If no categories locally, do always fetch. Otherwise check if fetching too frequently.
 		if (!categoriesAndTerms.isEmpty()) {
 			Duration diff = Duration.between(Settings.lastIndexFetchDateTime, now);
-			if (diff.toHours() < FETCH_TIME_GAP_HOURS) {
+			if (diff.toHours() < FETCH_TIME_GAP_MINUTES) {
 				logger.info("Not fetching until after timeout from previous fetch.");
 				return -1;
 			}
@@ -124,7 +124,7 @@ public class TermProvider {
 		}
 		LocalDateTime now = LocalDateTime.now(ZoneId.of("UTC"));
 		Duration diff = Duration.between(category.updated, now);
-		if (diff.toHours() < FETCH_TIME_GAP_HOURS) {
+		if (diff.toMinutes() < FETCH_TIME_GAP_MINUTES) {
 			logger.info("Not fetching the category until after timeout from previous fetch.");
 			return new ArrayList<>();
 		}
