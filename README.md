@@ -124,6 +124,29 @@ for different types of terms.
 
 See `settings.properties` and `Settings.java` for more details.
 
+## Learning topics
+
+For students, there are some things you might learn from this project:
+
+* Model-View-Controller architectural style.
+* Using the Observer design pattern.
+* Using a SQLite database from your app.
+* Fetching remote content using HTTPS.
+* Parsing JSON to objects.
+* Implementing a GUI using Java Swing/AWT.
+  * Menus, handling menu commands.
+  * Structuring the GUI using `JPanel`s and `Layout`s.
+  * Separate list data and list view to ListModel and ListView classes.
+  * Implementing list row renderers.
+  * Localization using resource bundles.
+  * Change GUI language on the fly without needing to restart the app.
+  * Using image resources in menus and panels.
+* Handling app settings using a properties file and `Properties` class.
+* Logging using Log4J.
+* Using external components in the app with Maven dependencies.
+* Generate a GraphViz dot file to be able to generate graphs from app data.
+* Run external apps and commands using `Process`.
+
 ## License
 
 MIT License, (c) Antti Juustila, 2022-2026.
